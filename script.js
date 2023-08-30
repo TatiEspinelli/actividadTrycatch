@@ -25,9 +25,15 @@ function showData(dataArray){
 
 //Solicitud fetch
 async function getJson () {
-	const response = await fetch(url);
+	try{
+		const response = await fetch(url);
 	const data = await response.json();
 	showData(data);
+	}
+	catch{
+		alert("La categoría no existe")
+	}
+	
 }
 
 //Error:
